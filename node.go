@@ -174,7 +174,7 @@ func (np *Node_) Notify(tp *Node_,junk *int) error {
 		*np.Prec = tp.Address
 		list := make(map[string]string)
 		junk := new(int)
-		_ = Call(np.Prec.IP.Address+":"+np.Prec.IP.Port,"Node_.Getdatalist",junk,list)
+		_ = Call(np.Prec.IP.Address+":"+np.Prec.IP.Port,"Node_.GetDatalist",junk,list)
 		np.backuplocker.Lock()
 		np.DatalistBackup = list
 		np.backuplocker.Unlock()
